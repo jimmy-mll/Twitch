@@ -7,6 +7,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{524B4373-E42
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitch.NET", "src\Twitch.NET\Twitch.NET.csproj", "{91214B39-9899-407F-A69B-C2A4C2B3F7A3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twitch.NET.Playground", "src\Twitch.NET.Playground\Twitch.NET.Playground.csproj", "{37852EF8-223E-4E69-B888-7E96A72511EE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,11 +19,16 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{91214B39-9899-407F-A69B-C2A4C2B3F7A3} = {524B4373-E427-4E5C-AA89-1E85333F9E53}
+		{37852EF8-223E-4E69-B888-7E96A72511EE} = {524B4373-E427-4E5C-AA89-1E85333F9E53}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{91214B39-9899-407F-A69B-C2A4C2B3F7A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{91214B39-9899-407F-A69B-C2A4C2B3F7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91214B39-9899-407F-A69B-C2A4C2B3F7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91214B39-9899-407F-A69B-C2A4C2B3F7A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37852EF8-223E-4E69-B888-7E96A72511EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37852EF8-223E-4E69-B888-7E96A72511EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37852EF8-223E-4E69-B888-7E96A72511EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37852EF8-223E-4E69-B888-7E96A72511EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
