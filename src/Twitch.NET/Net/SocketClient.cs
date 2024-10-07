@@ -79,6 +79,8 @@ public sealed class SocketClient : IAsyncDisposable
             await SendCommandAsync("CAP REQ twitch.tv/commands");
         }
 
+        await SendCommandAsync($"JOIN #{_options.TwitchChannel}");
+
         return true;
     }
 
