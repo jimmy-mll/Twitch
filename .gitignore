@@ -364,4 +364,4 @@ run-stress-*
 test:.cs
 
 # Ignore playground folder
-src/Twitch.NET.Playground
+src/Twitch.NET.Playground/
