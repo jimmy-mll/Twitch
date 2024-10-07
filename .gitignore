@@ -362,6 +362,3 @@ src/coreclr/System.Private.CoreLib/common
 .dotnet-daily/
 run-stress-*
 test:.cs
-
-# Ignore playground folder
-src/Twitch.NET.Playground/
