@@ -26,11 +26,6 @@ public sealed class TwitchOAuthClient : IDisposable
     }
 
     /// <summary>
-    /// Disposes the HTTP client.
-    /// </summary>
-    public void Dispose() => _http.Dispose();
-
-    /// <summary>
     /// Gets the authorization URL for the Twitch OAuth flow.
     /// </summary>
     /// <returns>The authorization URL as a string.</returns>
@@ -51,7 +46,7 @@ public sealed class TwitchOAuthClient : IDisposable
     /// <returns>A task that represents the asynchronous operation. The task result contains the OAuth token.</returns>
     public async Task<OAuthToken?> GetTokenFromCodeAsync(string code, string clientSecret)
     {
-        FormUrlEncodedContent content = new(new Dictionary<string, string>
+        var content = new FormUrlEncodedContent(new Dictionary<string, string>
         {
             ["client_id"] = _options.ClientId,
             ["client_secret"] = clientSecret,
@@ -60,10 +55,20 @@ public sealed class TwitchOAuthClient : IDisposable
             ["redirect_uri"] = _options.RedirectUri
         });
 
-        HttpResponseMessage response = await _http.PostAsync("token", content);
+        var response = await _http
+            .PostAsync("token", content)
+            .ConfigureAwait(false);
 
-        response.EnsureSuccessStatusCode();
-
-        return await response.Content.ReadFromJsonAsync<OAuthToken>();
+        return await response
+            .EnsureSuccessStatusCode()
+            .Content
+            .ReadFromJsonAsync<OAuthToken>()
+            .ConfigureAwait(false);
     }
+
+    /// <summary>
+    /// Disposes the HTTP client.
+    /// </summary>
+    public void Dispose() =>
+        _http.Dispose();
 }

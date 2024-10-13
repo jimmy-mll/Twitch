@@ -16,13 +16,11 @@ public static class AsyncEventExtensions
         where TEventArgs : AsyncEventArgs
     {
         if (handler is null)
-        {
             return;
-        }
 
-        foreach (Delegate invocation in handler.GetInvocationList())
-        {
-            await ((AsyncEventHandler<TEventArgs>)invocation).InvokeAsync(sender, e).ConfigureAwait(false);
-        }
+        foreach (var invocation in handler.GetInvocationList())
+            await ((AsyncEventHandler<TEventArgs>)invocation)
+                .InvokeAsync(sender, e)
+                .ConfigureAwait(false);
     }
 }

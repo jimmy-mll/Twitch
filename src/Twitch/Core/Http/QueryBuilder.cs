@@ -39,10 +39,11 @@ public sealed class QueryBuilder
     /// <returns>The current instance of <see cref="QueryBuilder"/>.</returns>
     public QueryBuilder Param(string key, string value)
     {
-        _builder.Append(_builder.Length == _uriLength ? '?' : '&');
-        _builder.Append(key);
-        _builder.Append('=');
-        _builder.Append(value);
+        _builder
+            .Append(_builder.Length == _uriLength ? '?' : '&')
+            .Append(key)
+            .Append('=')
+            .Append(value);
 
         return this;
     }
@@ -51,5 +52,6 @@ public sealed class QueryBuilder
     /// Returns a string that represents the constructed URI with query parameters.
     /// </summary>
     /// <returns>A string that represents the constructed URI with query parameters.</returns>
-    public override string ToString() => _builder.ToString();
+    public override string ToString() =>
+        _builder.ToString();
 }
